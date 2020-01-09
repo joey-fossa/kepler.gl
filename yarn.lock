@@ -1971,6 +1971,13 @@
     "@babel/runtime" "^7.0.0"
     math.gl "^3.1.2"
 
+"@luma.gl/test-utils@^8.0.0-beta.4":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@luma.gl/test-utils/-/test-utils-8.0.1.tgz#c73e1cd6de4ad6734b2969b6f6644e6a5044c3f2"
+  integrity sha512-jH/gQra0KRVS7OYF8tDjPHP/biv3o1/d9xVGydRe0+VIXTxauC7D3SrW3yshnrhwoxI2k+BW5fdTVRyUTOlfKQ==
+  dependencies:
+    probe.gl "^3.2.0"
+
 "@luma.gl/webgl@8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@luma.gl/webgl/-/webgl-8.0.1.tgz#ebed12d0e38da2ec4b1f203fd68eedc427b5be0c"
