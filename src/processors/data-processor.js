@@ -273,11 +273,7 @@ export function getFieldsFromData(data, fieldOrder) {
   const metadata = Analyzer.computeColMeta(
     data,
     [
-      {regex: /.*geojson|all_points/g, dataType: 'GEOMETRY'},
-
-      // s2 token
-      {regex: /token/g, dataType: 'STRING'},
-      {regex: /s2_token/g, dataType: 'STRING'}
+      {regex: /.*geojson|all_points/g, dataType: 'GEOMETRY'}
     ],
     {ignoredDataTypes: IGNORE_DATA_TYPES}
   );

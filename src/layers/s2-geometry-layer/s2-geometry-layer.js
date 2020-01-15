@@ -1,4 +1,4 @@
-// Copyright (c) 2019 Uber Technologies, Inc.
+// Copyright (c) 2020 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,8 +26,11 @@ import Layer from '../base-layer';
 import S2LayerIcon from './s2-layer-icon';
 import {HIGHLIGH_COLOR_3D} from 'constants/default-settings';
 
-export const TOKEN_FIELDS = {
-  token: ['token', 's2_token']
+export const S2_TOKEN_FIELDS = {
+  token: [
+    's2',
+    's2_token'
+  ]
 };
 
 export const s2RequiredColumns = ['token'];
@@ -76,7 +79,7 @@ export default class S2GeometryLayer extends Layer {
   }
 
   static findDefaultLayerProps({fields = []}) {
-    const foundColumns = this.findDefaultColumnField(TOKEN_FIELDS, fields);
+    const foundColumns = this.findDefaultColumnField(S2_TOKEN_FIELDS, fields);
     if (!foundColumns || !foundColumns.length) {
       return {props: []};
     }
