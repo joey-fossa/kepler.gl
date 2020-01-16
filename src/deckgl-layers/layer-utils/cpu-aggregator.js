@@ -138,7 +138,7 @@ function normalizeResult(result = {}) {
   return result;
 }
 
-export function getAggregatedData(step, props, aggregation, viewport) {
+export function getAggregatedData(step, props, aggregation, aggregationParams) {
   const {
     triggers: {aggregator: aggr}
   } = step;
@@ -146,7 +146,7 @@ export function getAggregatedData(step, props, aggregation, viewport) {
 
   // result should contain a data array and other props
   // result = {data: [], ...other props}
-  const result = aggregator(props, viewport);
+  const result = aggregator(props, aggregationParams);
   this.setState({
     layerData: normalizeResult(result)
   });
@@ -379,22 +379,23 @@ export default class CPUAggregator {
     dimensionChanges.forEach(f => typeof f === 'function' && f());
   }
 
-  updateAggregation(props, viewport) {
+  updateAggregation(props, aggregationParams) {
+
     const updaters = this._accumulateUpdaters(
       0,
       props,
       this.aggregationUpdater
     );
-    updaters.forEach(f => typeof f === 'function' && f(viewport));
+    updaters.forEach(f => typeof f === 'function' && f(aggregationParams));
   }
 
-  updateState({oldProps, props, changeFlags}, viewport) {
-    // const reprojectNeeded = this.needsReProjectPoints(oldProps, props, changeFlags);
+  updateState(opts, aggregationParams) {
+    const {oldProps, props, changeFlags} = opts;
     let dimensionChanges = [];
 
     if (changeFlags.dataChanged) {
       // if data changed update everything
-      this.updateAggregation(props, viewport);
+      this.updateAggregation(props, aggregationParams);
       this.updateAllDimensions(props);
 
       return this.state;
@@ -408,7 +409,7 @@ export default class CPUAggregator {
 
     if (aggregationChanges && aggregationChanges.length) {
       // get aggregatedData
-      aggregationChanges.forEach(f => typeof f === 'function' && f(viewport));
+      aggregationChanges.forEach(f => typeof f === 'function' && f(aggregationParams));
       this.updateAllDimensions(props);
     } else {
       // only update dimensions
