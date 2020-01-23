@@ -5,6 +5,7 @@
   <a href="https://travis-ci.com/keplergl/kepler.gl">
     <img src="https://api.travis-ci.com/keplergl/kepler.gl.svg?branch=master" alt="build" />
   </a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fjoey-fossa%2Fkepler.gl?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoey-fossa%2Fkepler.gl.svg?type=shield"/></a>
   <a href="https://github.com/keplergl/kepler.gl">
     <img src="https://img.shields.io/github/stars/keplergl/kepler.gl.svg?style=flat" alt="stars" />
   </a>
@@ -31,6 +32,9 @@
 [Kepler.gl][web] is a data-agnostic, high-performance web-based application for visual exploration of large-scale geolocation data sets. Built on top of [Mapbox GL](https://www.mapbox.com) and [deck.gl](http://uber.github.io/deck.gl/#/), kepler.gl can render millions of points representing thousands of trips and perform spatial aggregations on the fly.
 
 Kepler.gl is also a React component that uses [Redux](https://redux.js.org/) to manage its state and data flow. It can be embedded into other React-Redux applications and is highly customizable. For information on how to embed kepler.gl in your app take a look at this step-by-step [tutorial][vis-academy] on vis.academy.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoey-fossa%2Fkepler.gl.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoey-fossa%2Fkepler.gl?ref=badge_large)
 
 ## Links
 
