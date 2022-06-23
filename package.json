@@ -183,7 +183,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "gl": "^4.2.2",
-    "jsdom": "^11.1.0",
+    "jsdom": "^16.5.0",
     "json-loader": "^0.5.4",
     "nyc": "^11.4.1",
     "ocular-dev-tools": "^0.0.30",
